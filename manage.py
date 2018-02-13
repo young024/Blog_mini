@@ -46,7 +46,7 @@ def deploy(deploy_type):
         # step_1:insert basic blog info
         BlogInfo.insert_blog_info()
         # step_2:insert admin account
-        User.insert_admin(email='ycty024@163.com', username='ycty', password='wy2546242577wy')
+        User.insert_admin(email='xxxx@163.com', username='xxx', password='xxx')
         # step_3:insert system default setting
         ArticleTypeSetting.insert_system_setting()
         # step_4:insert default article sources
