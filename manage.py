@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-from flask.ext.script import Manager, Shell
-from flask.ext.migrate import Migrate, MigrateCommand
+from flask_script import Manager, Shell
+from flask_migrate import Migrate, MigrateCommand
 from app import create_app, db
 from app.models import ArticleType, article_types, Source, \
     Comment, Article, User, Menu, ArticleTypeSetting, BlogInfo, \
@@ -46,7 +46,7 @@ def deploy(deploy_type):
         # step_1:insert basic blog info
         BlogInfo.insert_blog_info()
         # step_2:insert admin account
-        User.insert_admin(email='blog_mini@163.com', username='blog_mini', password='blog_mini')
+        User.insert_admin(email='ycty024@163.com', username='ycty', password='wy2546242577wy')
         # step_3:insert system default setting
         ArticleTypeSetting.insert_system_setting()
         # step_4:insert default article sources

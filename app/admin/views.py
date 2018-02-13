@@ -1,13 +1,15 @@
 # coding:utf-8
 import sys
+from importlib import reload
+
 reload(sys)
-sys.setdefaultencoding('utf-8')
+#sys.setdefaultencoding('utf-8')#python3中字符编码都为unicode，因此该方法不存在
 
 from datetime import datetime
 import json
 from flask import render_template, redirect, flash, \
     url_for, request, current_app, jsonify
-from flask.ext.login import login_required, current_user
+from flask_login import login_required, current_user
 from . import admin
 from ..models import ArticleType, Source, Article, article_types, \
     Comment, User, Follow, Menu, ArticleTypeSetting, BlogInfo, Plugin

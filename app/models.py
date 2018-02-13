@@ -2,7 +2,7 @@
 import hashlib
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask.ext.login import UserMixin
+from flask_login import UserMixin
 from . import db, login_manager
 
 article_types = {u'开发语言': ['Python', 'Java', 'JavaScript'],
@@ -48,7 +48,7 @@ class User(UserMixin, db.Model):
         #     url = 'https://secure.gravatar.com/avatar'
         # else:
         #     url = 'http://www.gravatar.com/avatar'
-        url = 'http://gravatar.duoshuo.com/avatar'
+        url = 'https://secure.gravatar.com/avatar'
         hash = self.avatar_hash or hashlib.md5(
             self.email.encode('utf-8')).hexdigest()
         return '{url}/{hash}?s={size}&d={default}&r={rating}'.format(
@@ -241,7 +241,7 @@ class Comment(db.Model):
         #     url = 'https://secure.gravatar.com/avatar'
         # else:
         #     url = 'http://www.gravatar.com/avatar'
-        url = 'http://gravatar.duoshuo.com/avatar'
+        url = 'https://secure.gravatar.com/avatar'
         hash = self.avatar_hash or hashlib.md5(
             self.author_email.encode('utf-8')).hexdigest()
         return '{url}/{hash}?s={size}&d={default}&r={rating}'.format(
